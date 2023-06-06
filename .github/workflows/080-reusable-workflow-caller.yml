@@ -1,0 +1,23 @@
+on:
+  push:
+    branches: none # [ main ]
+  pull_request:
+    branches: none # [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  call-workflow-A:
+    uses: he329178/github-actions-course/.github/workflows/080-reusable-workflow-called.yml@main
+    with:
+      username: all
+    secrets:
+      token: ${{ secrets.TOKEN }}
+
+  call-workflow-B:
+    uses: he329178/github-actions-course/.github/workflows/080-reusable-workflow-called.yml@main
+    with:
+      username: team
+    secrets:
+      token: ${{ secrets.TOKEN }}
