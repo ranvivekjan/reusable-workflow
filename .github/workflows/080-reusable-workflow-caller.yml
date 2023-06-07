@@ -18,6 +18,6 @@ jobs:
   call-workflow-B:
     uses: he329178/github-actions-course/.github/workflows/080-reusable-workflow-called.yml@main
     with:
-      username: team
+      username: team1
     secrets:
       token: ${{ secrets.TOKEN }}
